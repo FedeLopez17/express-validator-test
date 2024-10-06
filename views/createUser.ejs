@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="/styles.css" />
     <title><%= title %></title>
   </head>
   <body>
+    <%- include("partials/navbar")%>
+
+    <a href="/">Back to home</a>
+
     <h1><%= title %></h1>
     <%- include("partials/errors.ejs") %>
     <form action="/create" method="POST">
       <%- include("partials/userFormInputs.ejs") %>
       <button type="submit">Submit</button>
     </form>
-    <a href="/">Back to home</a>
   </body>
 </html>

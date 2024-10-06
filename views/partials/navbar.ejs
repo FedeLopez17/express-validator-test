@@ -1,0 +1,25 @@
+<nav>
+  <a href="/"><h1>User Management</h1></a>
+
+  <% if (locals.isIndex) { %>
+
+  <form action="/search" method="GET" class="search">
+    <section class="searchbar">
+      <span class="icon magnifying-glass"></span>
+      <input
+        type="text"
+        name="search"
+        id="search"
+        value="<%= locals.search || '' %>"
+        placeholder="Search by name or email"
+        required
+      />
+      <a href="/"><span class="icon clear" title="Clear"></span></a>
+    </section>
+
+    <button type="submit">Search</button>
+  </form>
+
+  <a href="/create">Create a user</a>
+  <% } %>
+</nav>

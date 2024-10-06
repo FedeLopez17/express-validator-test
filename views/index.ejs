@@ -1,23 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="/styles.css" />
     <title><%= title %></title>
   </head>
   <body>
+    <%- include("partials/navbar", {search: locals.search, isIndex: true})%>
     <h1><%= title %></h1>
-
-    <form action="/search" method="GET">
-      <label for="search">Search: </label>
-      <input
-        type="text"
-        name="search"
-        id="search"
-        value="<%= locals.search || '' %>"
-        required
-      />
-      <button type="submit">Search</button>
-      <a href="/">Clear</a>
-    </form>
 
     <ul>
       <% if (locals.users) {%> <% users.forEach(function(user) { %>
@@ -39,6 +28,5 @@
       </form>
       <% }); %> <% } %>
     </ul>
-    <a href="/create">Create a user</a>
   </body>
 </html>
