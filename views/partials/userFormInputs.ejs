@@ -1,0 +1,41 @@
+<label for="firstName">First Name: </label>
+<input
+  type="text"
+  name="firstName"
+  id="firstName"
+  value="<%= locals.user?.firstName || '' %>"
+  required
+/>
+
+<label for="lastName">Last Name: </label>
+<input
+  type="text"
+  name="lastName"
+  id="lastName"
+  value="<%= locals.user?.lastName || '' %>"
+  required
+/>
+
+<label for="email">Email: </label>
+<input
+  type="email"
+  name="email"
+  id="email"
+  value="<%= locals.user?.email || '' %>"
+  required
+/>
+
+<label for="age">Age: </label>
+<input
+  type="number"
+  min="1"
+  max="120"
+  name="age"
+  id="age"
+  value="<%= locals.user?.age || '' %>"
+/>
+
+<label for="bio">Bio: </label>
+<textarea name="bio" id="bio" maxlength="200">
+<%= locals.user?.bio || '' %></textarea
+>
