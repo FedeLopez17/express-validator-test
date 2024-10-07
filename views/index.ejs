@@ -5,28 +5,52 @@
     <title><%= title %></title>
   </head>
   <body>
-    <%- include("partials/navbar", {search: locals.search, isIndex: true})%>
+    <%- include("partials/navbar", {search: locals.search, isIndex: true}) %>
     <h1><%= title %></h1>
 
-    <ul>
-      <% if (locals.users) {%> <% users.forEach(function(user) { %>
-      <li>
-        ID: <%= user.id %>, Name: <%= user.firstName %> <%= user.lastName %>
-      </li>
-      <a href="/<%= user.id %>/update">Update</a>
-      <form
-        action="/<%= user.id %>/delete"
-        method="POST"
-        style="display: inline"
-      >
-        <button
-          type="submit"
-          onclick="return confirm('Are you sure you want to delete this user?');"
-        >
-          Delete
-        </button>
-      </form>
-      <% }); %> <% } %>
-    </ul>
+    <% if (locals.users && locals.users.length > 0) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Age</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% users.forEach(function(user) { %>
+        <tr>
+          <td><%= user.id %></td>
+          <td><%= user.firstName %> <%= user.lastName %></td>
+          <td><%= user.email %></td>
+          <td><%= user.age || "N/A" %></td>
+          <td class="actions">
+            <a href="/<%= user.id %>/update">
+              <span class="icon update-user" title="Update User"></span>
+            </a>
+
+            <form
+              action="/<%= user.id %>/delete"
+              method="POST"
+              style="display: inline"
+            >
+              <button
+                class="delete-user-btn"
+                type="submit"
+                onclick="return confirm('Are you sure you want to delete this user?');"
+              >
+                <span class="icon delete-user" title="Delete User"></span>
+              </button>
+            </form>
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+    <% } else { %>
+    <h3>No users</h3>
+    <% } %>
   </body>
 </html>

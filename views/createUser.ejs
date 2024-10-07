@@ -11,7 +11,7 @@
 
     <h1><%= title %></h1>
     <%- include("partials/errors.ejs") %>
-    <form action="/create" method="POST">
+    <form action="/create" method="POST" class="user-form">
       <%- include("partials/userFormInputs.ejs") %>
       <button type="submit">Submit</button>
     </form>

@@ -5,7 +5,7 @@
 
   <form action="/search" method="GET" class="search">
     <section class="searchbar">
-      <span class="icon magnifying-glass"></span>
+      <label for="search"><span class="icon magnifying-glass"></span></label>
       <input
         type="text"
         name="search"
@@ -20,6 +20,11 @@
     <button type="submit">Search</button>
   </form>
 
-  <a href="/create">Create a user</a>
+  <a href="/create">
+    <section class="add-user-wrapper">
+      <p>Add User</p>
+      <span class="icon add-user" title="Add User"></span>
+    </section>
+  </a>
   <% } %>
 </nav>

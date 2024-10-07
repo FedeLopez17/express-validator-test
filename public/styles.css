@@ -38,17 +38,84 @@ form.search {
   border: none;
 }
 
-nav .icon {
+.icon {
   background-size: contain;
   display: inline-block;
-  height: 12px;
+  aspect-ratio: 2/2;
   width: 12px;
 }
 
 nav .icon.clear {
   background-image: url(/icons/x-mark.svg);
+  width: 10px;
 }
 
 nav .icon.magnifying-glass {
   background-image: url(/icons/magnifying-glass.svg);
+}
+
+nav .icon.add-user {
+  background-image: url(/icons/add-user.svg);
+  width: 24px;
+}
+
+section.add-user-wrapper {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.icon.update-user {
+  background-image: url(/icons/update-user.svg);
+}
+
+.icon.delete-user {
+  background-image: url(/icons/delete-user.svg);
+}
+
+td.actions {
+  display: flex;
+  gap: 4px;
+}
+
+td.actions .icon {
+  width: 24px;
+}
+
+td.actions .delete-user-btn {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+table {
+  width: 100%;
+}
+
+th,
+td {
+  padding: 12px 16px;
+  text-align: left;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #d3d3d3;
+}
+
+.user-form {
+  display: flex;
+  flex-direction: column;
+  background-color: lightgray;
+  width: min(1000px, 90%);
+  margin: 0 auto;
+  padding: 10px 0;
+  gap: 10px;
+}
+
+.user-form > button {
+  margin-top: 20px;
 }
