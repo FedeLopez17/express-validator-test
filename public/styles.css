@@ -11,10 +11,13 @@
 }
 body {
   width: min(1500px, 95%);
+  min-height: 100vh;
   margin: 0 auto;
   background: #fff;
   background: -webkit-linear-gradient(to right, #e2e2e2, #fff);
   background: linear-gradient(to right, #e2e2e2, #fff);
+  display: flex;
+  flex-direction: column;
 }
 
 nav {
@@ -248,4 +251,29 @@ tbody tr:hover {
   font-weight: 500;
   margin-top: 40px;
   text-align: center;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+  margin: auto 0 30px;
+  font-size: 0.8rem;
+}
+
+footer > * {
+  opacity: 0.8;
+}
+
+footer > *:hover {
+  opacity: 1;
+}
+
+footer .github-icon {
+  background: url(/icons/github-mark.svg);
+  background-size: contain;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
 }
