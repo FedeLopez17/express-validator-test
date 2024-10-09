@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
-  --light-green-1: #b0ebd7;
-  --light-green-2: #66cdaa;
+  --light-green-1: #ffa07a;
+  --light-green-2: #b52502;
 }
 
 * {
@@ -12,9 +12,9 @@
 body {
   width: min(1500px, 95%);
   margin: 0 auto;
-  background: #c9d6ff;
-  background: -webkit-linear-gradient(to right, #e2e2e2, #c9d6ff);
-  background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+  background: #fff;
+  background: -webkit-linear-gradient(to right, #e2e2e2, #fff);
+  background: linear-gradient(to right, #e2e2e2, #fff);
 }
 
 nav {
@@ -52,7 +52,7 @@ form.search {
 }
 
 .searchbar:focus-within {
-  border-color: var(--light-green-2);
+  border-color: rgb(184, 184, 184);
 }
 
 .searchbar input:focus-visible {
@@ -68,14 +68,14 @@ form.search {
 form.search button {
   border-radius: 0 6px 6px 0;
   border: 0;
-  background-color: var(--light-green-1);
-  border: 2px solid var(--light-green-2);
+  background-color: lightgray;
+  border: 1px solid rgb(184, 184, 184);
   cursor: pointer;
   font-size: 0.9rem;
 }
 
 form.search button:hover {
-  background-color: var(--light-green-2);
+  background-color: rgb(184, 184, 184);
 }
 
 .icon {
@@ -105,14 +105,14 @@ section.add-user-wrapper {
   gap: 4px;
   align-items: center;
   background-color: var(--light-green-1);
-  border: 2px solid var(--light-green-2);
+  border: 1px solid var(--light-green-1);
   height: 100%;
   padding: 0 10px;
   border-radius: 6px;
 }
 
 section.add-user-wrapper:hover {
-  background-color: var(--light-green-2);
+  border-color: var(--light-green-2);
 }
 
 section.add-user-wrapper p {
@@ -139,6 +139,7 @@ td.actions .icon {
   padding: 0 6px;
   background-repeat: no-repeat;
   background-position: center;
+  border-radius: 6px;
 }
 
 .icon.view-user {
@@ -161,10 +162,17 @@ td.actions .delete-user-btn {
   background-color: transparent;
   border: none;
   padding: 0;
+  display: flex;
+}
+
+td.actions a {
+  display: flex;
+  align-items: center;
 }
 
 table {
   width: 100%;
+  table-layout: fixed;
 }
 
 th,
@@ -175,6 +183,11 @@ td {
 
 thead tr {
   background-color: var(--light-green-2);
+  color: whitesmoke;
+}
+
+thead tr th {
+  font-weight: 600;
 }
 
 tr:nth-child(even) {
@@ -204,12 +217,12 @@ tbody tr:hover {
   padding: 5px 15px;
   border-radius: 6px;
   background-color: var(--light-green-1);
-  border: 2px solid var(--light-green-2);
+  border: 1px solid var(--light-green-1);
   cursor: pointer;
 }
 
 .user-form > button:hover {
-  background-color: var(--light-green-2);
+  border-color: var(--light-green-2);
 }
 
 .user-data p {
