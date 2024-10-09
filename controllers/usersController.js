@@ -7,6 +7,20 @@ exports.usersListGet = (req, res) => {
   });
 };
 
+exports.userGetById = (req, res) => {
+  const { id } = req.params;
+
+  const user = usersStorage.getUser(id);
+
+  if (user) {
+    res.render("user", {
+      user,
+    });
+  } else {
+    res.status(404).render("404");
+  }
+};
+
 exports.usersCreateGet = (req, res) => {
   res.render("createUser", {
     title: "Create user",
