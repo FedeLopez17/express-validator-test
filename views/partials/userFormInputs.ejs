@@ -3,6 +3,7 @@
   type="text"
   name="firstName"
   id="firstName"
+  placeholder="John"
   value="<%= locals.user?.firstName || '' %>"
   required
 />
@@ -12,6 +13,7 @@
   type="text"
   name="lastName"
   id="lastName"
+  placeholder="Doe"
   value="<%= locals.user?.lastName || '' %>"
   required
 />
@@ -21,6 +23,7 @@
   type="email"
   name="email"
   id="email"
+  placeholder="john.doe@email.com"
   value="<%= locals.user?.email || '' %>"
   required
 />
@@ -32,10 +35,17 @@
   max="120"
   name="age"
   id="age"
+  placeholder="32"
   value="<%= locals.user?.age || '' %>"
 />
 
 <label for="bio">Bio: </label>
-<textarea name="bio" id="bio" maxlength="200">
+<textarea
+  name="bio"
+  id="bio"
+  maxlength="200"
+  rows="4"
+  placeholder="John Doe, 32, is a jazz guitarist who loves blending diverse styles and creating unique musical expressions."
+>
 <%= locals.user?.bio || '' %></textarea
 >

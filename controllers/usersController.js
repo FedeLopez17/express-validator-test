@@ -2,7 +2,7 @@ const usersStorage = require("../storages/usersStorage");
 
 exports.usersListGet = (req, res) => {
   res.render("index", {
-    title: "User list",
+    title: "User List",
     users: usersStorage.getUsers(),
   });
 };
@@ -23,7 +23,7 @@ exports.userGetById = (req, res) => {
 
 exports.usersCreateGet = (req, res) => {
   res.render("createUser", {
-    title: "Create user",
+    title: "Create User",
   });
 };
 
@@ -69,7 +69,7 @@ exports.usersCreatePost = [
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).render("createUser", {
-        title: "Create user",
+        title: "Create User",
         errors: errors.array(),
       });
     }
@@ -83,7 +83,7 @@ exports.usersCreatePost = [
 exports.usersUpdateGet = (req, res) => {
   const user = usersStorage.getUser(req.params.id);
   res.render("updateUser", {
-    title: "Update user",
+    title: "Update User",
     user: user,
   });
 };
@@ -95,7 +95,7 @@ exports.usersUpdatePost = [
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).render("updateUser", {
-        title: "Update user",
+        title: "Update User",
         user: user,
         errors: errors.array(),
       });

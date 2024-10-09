@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="stylesheet" href="/styles.css" />
     <title><%= title %></title>
   </head>
   <body>
-    <%- include("partials/navbar", {search: locals.search, isIndex: true}) %>
-    <h1><%= title %></h1>
-
-    <% if (locals.users && locals.users.length > 0) { %>
+    <%- include("partials/navbar", {search: locals.search, isIndex: true}) %> <%
+    if (locals.users && locals.users.length > 0) { %>
     <table>
       <thead>
         <tr>
@@ -27,6 +26,10 @@
           <td><%= user.email %></td>
           <td><%= user.age || "N/A" %></td>
           <td class="actions">
+            <a href="/user/<%= user.id %>">
+              <span class="icon view-user" title="View User"></span>
+            </a>
+
             <a href="/<%= user.id %>/update">
               <span class="icon update-user" title="Update User"></span>
             </a>
@@ -46,11 +49,12 @@
             </form>
           </td>
         </tr>
+
         <% }) %>
       </tbody>
     </table>
     <% } else { %>
-    <h3>No users</h3>
+    <h3 class="no-users">No matching users</h3>
     <% } %>
   </body>
 </html>

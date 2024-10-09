@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="stylesheet" href="/styles.css" />
     <title><%= user.firstName %> <%= user.lastName %></title>
   </head>
@@ -12,8 +13,8 @@
     <section class="user-data">
       <p>
         <span class="name"><%= user.firstName %> <%= user.lastName %></span>
-        <span class="lastname"><%= user.email %></span>
-        <span class="years"><%= user.age %> years old</span>
+        <span class="email"><%= user.email %></span>
+        <span class="age"><%= user.age %> years old</span>
         <span class="bio"><%= user.bio %></span>
       </p>
     </section>

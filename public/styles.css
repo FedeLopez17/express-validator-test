@@ -1,19 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --light-green-1: #b0ebd7;
+  --light-green-2: #66cdaa;
+}
+
 * {
   margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  width: min(1500px, 95%);
+  margin: 0 auto;
+  background: #c9d6ff;
+  background: -webkit-linear-gradient(to right, #e2e2e2, #c9d6ff);
+  background: linear-gradient(to right, #e2e2e2, #c9d6ff);
 }
 
 nav {
-  background: skyblue;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   padding: 10px 0;
+  margin-bottom: 40px;
+  height: 50px;
+  box-sizing: border-box;
+}
+
+a,
+a:active,
+a:hover,
+a:link {
+  text-decoration: none;
+  color: unset;
 }
 
 form.search {
   display: flex;
   margin-left: auto;
   margin-right: 40px;
-  gap: 10px;
+  align-items: stretch;
 }
 
 .searchbar {
@@ -22,11 +47,12 @@ form.search {
   background-color: white;
   gap: 5px;
   align-items: center;
-  border-radius: 10px;
+  border-radius: 6px 0 0 6px;
+  border: 2px solid lightgray;
 }
 
 .searchbar:focus-within {
-  outline: 1px solid red;
+  border-color: var(--light-green-2);
 }
 
 .searchbar input:focus-visible {
@@ -36,6 +62,20 @@ form.search {
 .searchbar input {
   background-color: transparent;
   border: none;
+  font-size: 0.8rem;
+}
+
+form.search button {
+  border-radius: 0 6px 6px 0;
+  border: 0;
+  background-color: var(--light-green-1);
+  border: 2px solid var(--light-green-2);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+form.search button:hover {
+  background-color: var(--light-green-2);
 }
 
 .icon {
@@ -48,6 +88,7 @@ form.search {
 nav .icon.clear {
   background-image: url(/icons/x-mark.svg);
   width: 10px;
+  opacity: 0.6;
 }
 
 nav .icon.magnifying-glass {
@@ -63,29 +104,63 @@ section.add-user-wrapper {
   display: flex;
   gap: 4px;
   align-items: center;
+  background-color: var(--light-green-1);
+  border: 2px solid var(--light-green-2);
+  height: 100%;
+  padding: 0 10px;
+  border-radius: 6px;
 }
 
-.icon.update-user {
-  background-image: url(/icons/update-user.svg);
+section.add-user-wrapper:hover {
+  background-color: var(--light-green-2);
 }
 
-.icon.delete-user {
-  background-image: url(/icons/delete-user.svg);
+section.add-user-wrapper p {
+  font-size: 0.9rem;
+}
+
+section.add-user-wrapper .icon {
+  width: 1.2rem;
 }
 
 td.actions {
   display: flex;
-  gap: 4px;
+  gap: 15px;
+  align-items: center;
+  opacity: 0.7;
+}
+
+td.actions:hover {
+  opacity: 1;
 }
 
 td.actions .icon {
   width: 24px;
+  padding: 0 6px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon.view-user {
+  background-image: url(/icons/details.svg);
+  background-color: skyblue;
+}
+
+.icon.update-user {
+  background-image: url(/icons/update-user.svg);
+  background-color: orange;
+}
+
+.icon.delete-user {
+  background-image: url(/icons/delete-user.svg);
+  background-color: salmon;
 }
 
 td.actions .delete-user-btn {
   cursor: pointer;
   background-color: transparent;
   border: none;
+  padding: 0;
 }
 
 table {
@@ -94,28 +169,70 @@ table {
 
 th,
 td {
-  padding: 12px 16px;
+  padding: 4px 16px;
   text-align: left;
+}
+
+thead tr {
+  background-color: var(--light-green-2);
 }
 
 tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-tr:hover {
+tbody tr:hover {
   background-color: #d3d3d3;
 }
 
 .user-form {
   display: flex;
   flex-direction: column;
-  background-color: lightgray;
-  width: min(1000px, 90%);
+  width: min(750px, 90%);
   margin: 0 auto;
   padding: 10px 0;
   gap: 10px;
 }
 
+.user-form textarea {
+  resize: vertical;
+}
+
 .user-form > button {
   margin-top: 20px;
+  align-self: flex-end;
+  padding: 5px 15px;
+  border-radius: 6px;
+  background-color: var(--light-green-1);
+  border: 2px solid var(--light-green-2);
+  cursor: pointer;
+}
+
+.user-form > button:hover {
+  background-color: var(--light-green-2);
+}
+
+.user-data p {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.user-data .name {
+  font-weight: 600;
+}
+
+.user-data:not(.name) {
+  font-weight: 300;
+}
+
+.user-data .bio {
+  margin-top: 15px;
+}
+
+.not-found,
+.no-users {
+  font-weight: 500;
+  margin-top: 40px;
+  text-align: center;
 }
